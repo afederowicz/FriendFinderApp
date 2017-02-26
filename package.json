@@ -1,0 +1,25 @@
+{
+  "name": "week13hw",
+  "version": "1.0.0",
+  "description": "node and express server hw",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.16.1",
+    "express": "^4.14.1",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/afederowicz/FriendFinderApp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/afederowicz/FriendFinderApp/issues"
+  },
+  "homepage": "https://github.com/afederowicz/FriendFinderApp#readme"
+}
