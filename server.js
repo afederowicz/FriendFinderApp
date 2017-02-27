@@ -11,18 +11,25 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
-app.get("/", function(req, res) {
-	console.log(__dirname);
-	res.sendFile(path.join(__dirname, "/app/public/home.html"));
-});
+// Serve static content for the app from the "public" directory in the application directory.
+app.use(express.static(process.cwd() + "/public"));
+
+app.use(bodyParser.urlencoded({ extended: false }));
+
+
+// app.get("/", function(req, res) {
+// 	console.log(__dirname);
+// 	res.sendFile(path.join(__dirname, "/app/public/home.html"));
+// });
 
 
 app.post("/survey-response", function(req, res) {
 	res.send(req.body);
 });
 
-var htmlRoutes = require("./app/routing/htmlRoutes.js");
 var apiRoutes = require("./app/routing/apiRoutes.js");
+var htmlRoutes = require("./app/routing/htmlRoutes.js");
+
 
 app.use("/survey", htmlRoutes);
 
