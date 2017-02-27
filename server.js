@@ -16,14 +16,15 @@ app.get("/", function(req, res) {
 	res.sendFile(path.join(__dirname, "/app/public/home.html"));
 });
 
-app.get("/survey", function(req, res) {
-	res.sendFile(path.join(__dirname, "/app/public/survey.html"));
-});
 
 app.post("/survey-response", function(req, res) {
 	res.send(req.body);
 });
 
+var htmlRoutes = require("./app/routing/htmlRoutes.js");
+var apiRoutes = require("./app/routing/apiRoutes.js");
+
+app.use("/survey", htmlRoutes);
 
 app.listen(PORT, function(){
 	console.log('listening on port ' + PORT)
